@@ -105,7 +105,7 @@ void InitBetweenSquares()
 
 void InitPinnedMovementSquares()
 {
-    int dirs[] = { W, NE, N, NW, E, SW, S, SE };
+    const int dirs[] = { W, NE, N, NW, E, SW, S, SE };
 
     for(int pSq = 0; pSq < 64; pSq++) {
         for(int kSq = 0; kSq < 64; kSq++) {

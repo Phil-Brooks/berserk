@@ -33,7 +33,7 @@ long GetTimeMS();
 INLINE void* AlignedMalloc(uint64_t size)
 {
     void* mem = malloc(size + ALIGN_ON + sizeof(void*));
-    void** ptr = (void**)((uintptr_t)(mem + ALIGN_ON + sizeof(void*)) & ~(ALIGN_ON - 1));
+    void** ptr = (void**)((uintptr_t)((char*)mem + ALIGN_ON + sizeof(void*)) & ~(ALIGN_ON - 1));
     ptr[-1] = mem;
     return ptr;
 }

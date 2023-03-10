@@ -27,7 +27,7 @@
 
 #include <stdio.h>
 
-Move Best(ScoredMove* current, ScoredMove* end)
+Move Best(ScoredMove* current, const ScoredMove* end)
 {
     ScoredMove* orig = current;
     ScoredMove* max = current;
@@ -96,8 +96,6 @@ Move NextMove(MovePicker* picker, Board* board, int skipQuiets)
                 return move;
             }
         }
-
-        picker->phase = PLAY_KILLER_1;
         // fallthrough
     case PLAY_KILLER_1:
         picker->phase = PLAY_KILLER_2;
@@ -237,26 +235,4 @@ Move NextMove(MovePicker* picker, Board* board, int skipQuiets)
     }
 
     return NULL_MOVE;
-}
-
-char* PhaseName(MovePicker* picker)
-{
-    switch(picker->phase) {
-    case HASH_MOVE:
-        return "HASH_MOVE";
-    case PLAY_GOOD_NOISY:
-        return "PLAY_GOOD_NOISY";
-    case PLAY_KILLER_1:
-        return "PLAY_KILLER_1";
-    case PLAY_KILLER_2:
-        return "PLAY_KILLER_2";
-    case PLAY_COUNTER:
-        return "PLAY_COUNTER";
-    case PLAY_QUIETS:
-        return "PLAY_QUIETS";
-    case PLAY_BAD_NOISY:
-        return "PLAY_BAD_NOISY";
-    default:
-        return "UNKNOWN";
-    }
 }

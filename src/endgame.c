@@ -212,29 +212,28 @@ int EvaluateKnownPositions(Board* board)
     }
 
     if(BitCount(OccBB(BLACK)) == 1) {
-        // KBPK
-        if((board->piecesCounts ^ 0x10000) <= 0xF)
-            return EvaluateKBPK(board, WHITE);
-
         // stacked rook pawns
         if(board->piecesCounts <= 0xF) {
             uint8_t files = PawnFiles(PieceBB(PAWN, WHITE));
             if(files == 0x1 || files == 0x80)
                 return EvaluateKPK(board, WHITE);
         }
+        // KBPK
+        if((board->piecesCounts ^ 0x10000) <= 0xF)
+            return EvaluateKBPK(board, WHITE);
 
         return EvaluateKXK(board, WHITE);
     } else if(BitCount(OccBB(WHITE)) == 1) {
-        // Kkbp
-        if((board->piecesCounts ^ 0x100000) <= 0xF0)
-            return EvaluateKBPK(board, BLACK);
-
         // stacked rook pawns
         if(board->piecesCounts <= 0xF0) {
             uint8_t files = PawnFiles(PieceBB(PAWN, BLACK));
             if(files == 0x1 || files == 0x80)
                 return EvaluateKPK(board, BLACK);
         }
+
+        // Kkbp
+        if((board->piecesCounts ^ 0x100000) <= 0xF0)
+            return EvaluateKBPK(board, BLACK);
 
         return EvaluateKXK(board, BLACK);
     }

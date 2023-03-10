@@ -97,7 +97,7 @@ void ParseGo(char* in, Board* board)
     Limits.infinite = 0;
     Limits.mate = 0;
 
-    char* ptrChar = in;
+    char* ptrChar;
     int perft = 0, movesToGo = -1, moveTime = -1, time = -1, inc = 0, depth = -1, nodes = 0, ponder = 0, mate = 0;
 
     SimpleMoveList rootMoves;
@@ -213,7 +213,7 @@ void ParseGo(char* in, Board* board)
 void ParsePosition(char* in, Board* board)
 {
     in += 9;
-    char* ptrChar = in;
+    char* ptrChar;
 
     if(strncmp(in, "startpos", 8) == 0) {
         ParseFen(START_FEN, board);
@@ -426,7 +426,8 @@ void UCILoop()
                    totalEntries);
         } else if(!strncmp(in, "setoption name Threads value ", 29)) {
             int n = GetOptionIntValue(in);
-            ThreadsSetNumber(Max(1, Min(256, n)));
+            int tn = Max(1, Min(256, n));
+            ThreadsSetNumber(tn);
             printf("info string set Threads to value %d\n", Threads.count);
         } else if(!strncmp(in, "setoption name SyzygyPath value ", 32)) {
             int success = tb_init(in + 32);
@@ -440,19 +441,19 @@ void UCILoop()
             MULTI_PV = Max(1, Min(256, n));
             printf("info string set MultiPV to value %d\n", MULTI_PV);
         } else if(!strncmp(in, "setoption name Ponder value ", 28)) {
-            char opt[5];
+            char opt[6];
             sscanf(in, "%*s %*s %*s %*s %5s", opt);
 
             PONDER_ENABLED = !strncmp(opt, "true", 4);
             printf("info string set Ponder to value %s\n", PONDER_ENABLED ? "true" : "false");
         } else if(!strncmp(in, "setoption name UCI_ShowWDL value ", 33)) {
-            char opt[5];
+            char opt[6];
             sscanf(in, "%*s %*s %*s %*s %5s", opt);
 
             SHOW_WDL = !strncmp(opt, "true", 4);
             printf("info string set SHOW_WDL to value %s\n", SHOW_WDL ? "true" : "false");
         } else if(!strncmp(in, "setoption name UCI_Chess960 value ", 34)) {
-            char opt[5];
+            char opt[6];
             sscanf(in, "%*s %*s %*s %*s %5s", opt);
 
             CHESS_960 = !strncmp(opt, "true", 4);

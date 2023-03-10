@@ -738,7 +738,7 @@ int Quiesce(int alpha, int beta, ThreadData* thread, SearchStack* ss)
     int ttPv = 0;
     int inCheck = !!board->checkers;
     int ttScore = UNKNOWN;
-    int eval = ss->staticEval;
+    int eval;
 
     Move bestMove = NULL_MOVE;
     Move move = NULL_MOVE;

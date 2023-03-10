@@ -223,16 +223,6 @@ int OutputLayer(acc_t* stm, acc_t* xstm)
     return result / QUANTIZATION_PRECISION_IN / QUANTIZATION_PRECISION_OUT;
 }
 
-int Predict(Board* board)
-{
-    Accumulator acc[1];
-
-    ResetAccumulator(acc, board, board->stm);
-    ResetAccumulator(acc, board, board->xstm);
-
-    return OutputLayer(acc->values[board->stm], acc->values[board->xstm]);
-}
-
 void ResetRefreshTable(AccumulatorKingState* refreshTable)
 {
     for(size_t b = 0; b < 2 * 2 * N_KING_BUCKETS; b++) {
@@ -359,6 +349,8 @@ int LoadNetwork(char* path)
     uint8_t* data = malloc(NETWORK_SIZE);
     if(fread(data, sizeof(uint8_t), NETWORK_SIZE, fin) != NETWORK_SIZE) {
         printf("info string Error reading file at %s\n", path);
+        fclose(fin);
+        free(data);
         return 0;
     }
 
