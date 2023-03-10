@@ -1,0 +1,93 @@
+[{
+  "file": "D:\\Github\\berserk\\src\\uci.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\uci.c -o D:\\Github\\berserk\\src\\uci.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }, {
+  "file": "D:\\Github\\berserk\\src\\movegen.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\movegen.c -o D:\\Github\\berserk\\src\\movegen.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }, {
+  "file": "D:\\Github\\berserk\\src\\pyrrhic\\tbprobe.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\pyrrhic\\tbprobe.c -o D:\\Github\\berserk\\src\\pyrrhic\\tbprobe.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }, {
+  "file": "D:\\Github\\berserk\\src\\tb.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\tb.c -o D:\\Github\\berserk\\src\\tb.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }, {
+  "file": "D:\\Github\\berserk\\src\\bits.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\bits.c -o D:\\Github\\berserk\\src\\bits.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }, {
+  "file": "D:\\Github\\berserk\\src\\attacks.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\attacks.c -o D:\\Github\\berserk\\src\\attacks.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }, {
+  "file": "D:\\Github\\berserk\\src\\board.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\board.c -o D:\\Github\\berserk\\src\\board.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }, {
+  "file": "D:\\Github\\berserk\\src\\movepick.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\movepick.c -o D:\\Github\\berserk\\src\\movepick.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }, {
+  "file": "D:\\Github\\berserk\\src\\endgame.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\endgame.c -o D:\\Github\\berserk\\src\\endgame.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }, {
+  "file": "D:\\Github\\berserk\\src\\move.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\move.c -o D:\\Github\\berserk\\src\\move.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }, {
+  "file": "D:\\Github\\berserk\\src\\eval.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\eval.c -o D:\\Github\\berserk\\src\\eval.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }, {
+  "file": "D:\\Github\\berserk\\src\\transposition.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\transposition.c -o D:\\Github\\berserk\\src\\transposition.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }, {
+  "file": "D:\\Github\\berserk\\src\\util.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\util.c -o D:\\Github\\berserk\\src\\util.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }, {
+  "file": "D:\\Github\\berserk\\src\\perft.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\perft.c -o D:\\Github\\berserk\\src\\perft.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }, {
+  "file": "D:\\Github\\berserk\\src\\history.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\history.c -o D:\\Github\\berserk\\src\\history.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }, {
+  "file": "D:\\Github\\berserk\\src\\thread.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\thread.c -o D:\\Github\\berserk\\src\\thread.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }, {
+  "file": "D:\\Github\\berserk\\src\\search.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\search.c -o D:\\Github\\berserk\\src\\search.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }, {
+  "file": "D:\\Github\\berserk\\src\\berserk.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\berserk.c -o D:\\Github\\berserk\\src\\berserk.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }, {
+  "file": "D:\\Github\\berserk\\src\\random.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\random.c -o D:\\Github\\berserk\\src\\random.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }, {
+  "file": "D:\\Github\\berserk\\src\\see.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\see.c -o D:\\Github\\berserk\\src\\see.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }, {
+  "file": "D:\\Github\\berserk\\src\\bench.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\bench.c -o D:\\Github\\berserk\\src\\bench.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }, {
+  "file": "D:\\Github\\berserk\\src\\nn.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\nn.c -o D:\\Github\\berserk\\src\\nn.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }, {
+  "file": "D:\\Github\\berserk\\src\\zobrist.c",
+  "directory": "D:\\Github\\berserk",
+  "command": "C:/msys64/mingw64/bin/gcc.exe -c D:\\Github\\berserk\\src\\zobrist.c -o D:\\Github\\berserk\\src\\zobrist.c.o -target x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\x86_64-w64-mingw32 -IC:\\msys64\\mingw64\\include\\c++\\12.2.0\\backward -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include -IC:\\msys64\\mingw64\\include -IC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\12.2.0\\include-fixed -DVERSION=\\\"11.1\\\" -DEVALFILE=\\\"networks/berserk-e3f526b26f50.nn\\\" -I. -I. -ID:\\Github\\berserk\\src  -O0  -gdwarf-2  -Wall"
+ }]
