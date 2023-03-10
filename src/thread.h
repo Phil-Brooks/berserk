@@ -17,20 +17,20 @@
 #ifndef THREAD_H
 #define THREAD_H
 
+#include "types.h"
+
 #include <pthread.h>
 #include <stdatomic.h>
 
-#include "types.h"
-
 typedef struct {
-  ThreadData* threads[256];
-  int count;
+    ThreadData* threads[256];
+    int count;
 
-  pthread_mutex_t mutex, lock;
-  pthread_cond_t sleep;
+    pthread_mutex_t mutex, lock;
+    pthread_cond_t sleep;
 
-  uint8_t init, searching, sleeping, stopOnPonderHit;
-  atomic_uchar ponder, stop;
+    uint8_t init, searching, sleeping, stopOnPonderHit;
+    atomic_uchar ponder, stop;
 } ThreadPool;
 
 extern ThreadPool Threads;

@@ -24,60 +24,61 @@
 #include "types.h"
 #include "util.h"
 
-const int SEE_VALUE[7] = {100, 422, 422, 642, 1015, 30000, 0};
+const int SEE_VALUE[7] = { 100, 422, 422, 642, 1015, 30000, 0 };
 
 // Static exchange evaluation using The Swap Algorithm -
 // https://www.chessprogramming.org/SEE_-_The_Swap_Algorithm
-inline int SEE(Board* board, Move move, int threshold) {
-  if (IsCas(move) || IsEP(move) || Promo(move))
-    return 1;
+inline int SEE(Board* board, Move move, int threshold)
+{
+    if(IsCas(move) || IsEP(move) || Promo(move))
+        return 1;
 
-  int from = From(move);
-  int to   = To(move);
+    int from = From(move);
+    int to = To(move);
 
-  int v = SEE_VALUE[PieceType(board->squares[to])] - threshold;
-  if (v < 0)
-    return 0;
+    int v = SEE_VALUE[PieceType(board->squares[to])] - threshold;
+    if(v < 0)
+        return 0;
 
-  v -= SEE_VALUE[PieceType(Moving(move))];
-  if (v >= 0)
-    return 1;
+    v -= SEE_VALUE[PieceType(Moving(move))];
+    if(v >= 0)
+        return 1;
 
-  BitBoard occ       = (OccBB(BOTH) ^ Bit(from)) | Bit(to);
-  BitBoard attackers = AttacksToSquare(board, to, occ);
+    BitBoard occ = (OccBB(BOTH) ^ Bit(from)) | Bit(to);
+    BitBoard attackers = AttacksToSquare(board, to, occ);
 
-  BitBoard diag     = PieceBB(BISHOP, WHITE) | PieceBB(BISHOP, BLACK) | PieceBB(QUEEN, WHITE) | PieceBB(QUEEN, BLACK);
-  BitBoard straight = PieceBB(ROOK, WHITE) | PieceBB(ROOK, BLACK) | PieceBB(QUEEN, WHITE) | PieceBB(QUEEN, BLACK);
+    BitBoard diag = PieceBB(BISHOP, WHITE) | PieceBB(BISHOP, BLACK) | PieceBB(QUEEN, WHITE) | PieceBB(QUEEN, BLACK);
+    BitBoard straight = PieceBB(ROOK, WHITE) | PieceBB(ROOK, BLACK) | PieceBB(QUEEN, WHITE) | PieceBB(QUEEN, BLACK);
 
-  int stm = board->xstm;
-  while (1) {
-    attackers &= occ;
+    int stm = board->xstm;
+    while(1) {
+        attackers &= occ;
 
-    BitBoard mine = attackers & OccBB(stm);
-    if (!mine)
-      break;
+        BitBoard mine = attackers & OccBB(stm);
+        if(!mine)
+            break;
 
-    int piece = PAWN;
-    for (piece = PAWN; piece < KING; piece++)
-      if (mine & PieceBB(piece, stm))
-        break;
+        int piece = PAWN;
+        for(piece = PAWN; piece < KING; piece++)
+            if(mine & PieceBB(piece, stm))
+                break;
 
-    stm ^= 1;
-
-    if ((v = -v - 1 - SEE_VALUE[piece]) >= 0) {
-      if (piece == KING && (attackers & OccBB(stm)))
         stm ^= 1;
 
-      break;
+        if((v = -v - 1 - SEE_VALUE[piece]) >= 0) {
+            if(piece == KING && (attackers & OccBB(stm)))
+                stm ^= 1;
+
+            break;
+        }
+
+        occ ^= Bit(LSB(mine & PieceBB(piece, stm ^ 1)));
+
+        if(piece == PAWN || piece == BISHOP || piece == QUEEN)
+            attackers |= GetBishopAttacks(to, occ) & diag;
+        if(piece == ROOK || piece == QUEEN)
+            attackers |= GetRookAttacks(to, occ) & straight;
     }
 
-    occ ^= Bit(LSB(mine & PieceBB(piece, stm ^ 1)));
-
-    if (piece == PAWN || piece == BISHOP || piece == QUEEN)
-      attackers |= GetBishopAttacks(to, occ) & diag;
-    if (piece == ROOK || piece == QUEEN)
-      attackers |= GetRookAttacks(to, occ) & straight;
-  }
-
-  return stm != board->stm;
+    return stm != board->stm;
 }

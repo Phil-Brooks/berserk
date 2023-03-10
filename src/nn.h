@@ -31,7 +31,7 @@ void LoadDefaultNN();
 int LoadNetwork(char* path);
 
 typedef struct {
-  uint8_t r, a;
-  int rem[32];
-  int add[32];
+    uint8_t r, a;
+    int rem[32];
+    int add[32];
 } Delta;

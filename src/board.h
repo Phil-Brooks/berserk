@@ -17,25 +17,25 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-#include <math.h>
-
 #include "types.h"
 #include "util.h"
 
+#include <math.h>
+
 #define NO_PIECE 12
 
-#define Piece(pc, c)   (((pc) << 1) + c)
-#define PieceType(pc)  ((pc) >> 1)
-#define PPieceBB(pc)   (board->pieces[pc])
+#define Piece(pc, c) (((pc) << 1) + c)
+#define PieceType(pc) ((pc) >> 1)
+#define PPieceBB(pc) (board->pieces[pc])
 #define PieceBB(pc, c) (board->pieces[Piece(pc, (c))])
-#define OccBB(c)       (board->occupancies[c])
+#define OccBB(c) (board->occupancies[c])
 
-#define File(sq)        ((sq) &7)
-#define Rank(sq)        ((sq) >> 3)
-#define Sq(r, f)        ((r) *8 + (f))
-#define Distance(a, b)  Max(abs(Rank(a) - Rank(b)), abs(File(a) - File(b)))
+#define File(sq) ((sq)&7)
+#define Rank(sq) ((sq) >> 3)
+#define Sq(r, f) ((r)*8 + (f))
+#define Distance(a, b) Max(abs(Rank(a) - Rank(b)), abs(File(a) - File(b)))
 #define MDistance(a, b) (abs(Rank(a) - Rank(b)) + abs(File(a) - File(b)))
-#define PieceCount(pc)  (1ull << (pc * 4))
+#define PieceCount(pc) (1ull << (pc * 4))
 
 extern const uint16_t KING_BUCKETS[64];
 
@@ -63,12 +63,13 @@ int IsLegal(Move move, Board* board);
 void InitCuckoo();
 int HasCycle(Board* board, int ply);
 
-INLINE int FeatureIdx(int piece, int sq, int kingsq, const int view) {
-  int oP  = 6 * ((piece ^ view) & 0x1) + PieceType(piece);
-  int oK  = (7 * !(kingsq & 4)) ^ (56 * view) ^ kingsq;
-  int oSq = (7 * !(kingsq & 4)) ^ (56 * view) ^ sq;
+INLINE int FeatureIdx(int piece, int sq, int kingsq, const int view)
+{
+    int oP = 6 * ((piece ^ view) & 0x1) + PieceType(piece);
+    int oK = (7 * !(kingsq & 4)) ^ (56 * view) ^ kingsq;
+    int oSq = (7 * !(kingsq & 4)) ^ (56 * view) ^ sq;
 
-  return KING_BUCKETS[oK] * 12 * 64 + oP * 64 + oSq;
+    return KING_BUCKETS[oK] * 12 * 64 + oP * 64 + oSq;
 }
 
 #endif

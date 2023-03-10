@@ -14,9 +14,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-#include <inttypes.h>
-#include <stdio.h>
-
 #include "board.h"
 #include "move.h"
 #include "movegen.h"
@@ -24,50 +21,55 @@
 #include "types.h"
 #include "util.h"
 
-uint64_t Perft(int depth, Board* board) {
-  if (depth == 0)
-    return 1;
+#include <inttypes.h>
+#include <stdio.h>
 
-  Move move;
-  MovePicker mp;
-  InitPerftMovePicker(&mp, board);
+uint64_t Perft(int depth, Board* board)
+{
+    if(depth == 0)
+        return 1;
 
-  if (depth == 1)
-    return mp.end - mp.moves;
+    Move move;
+    MovePicker mp;
+    InitPerftMovePicker(&mp, board);
 
-  uint64_t nodes = 0;
-  while ((move = NextMove(&mp, board, 0))) {
-    MakeMoveUpdate(move, board, 0);
-    nodes += Perft(depth - 1, board);
-    UndoMove(move, board);
-  }
+    if(depth == 1)
+        return mp.end - mp.moves;
 
-  return nodes;
+    uint64_t nodes = 0;
+    while((move = NextMove(&mp, board, 0))) {
+        MakeMoveUpdate(move, board, 0);
+        nodes += Perft(depth - 1, board);
+        UndoMove(move, board);
+    }
+
+    return nodes;
 }
 
-void PerftTest(int depth, Board* board) {
-  uint64_t total = 0;
+void PerftTest(int depth, Board* board)
+{
+    uint64_t total = 0;
 
-  printf("\nRunning performance test to depth %d\n\n", depth);
+    printf("\nRunning performance test to depth %d\n\n", depth);
 
-  long startTime = GetTimeMS();
+    long startTime = GetTimeMS();
 
-  Move move;
-  MovePicker mp;
-  InitPerftMovePicker(&mp, board);
+    Move move;
+    MovePicker mp;
+    InitPerftMovePicker(&mp, board);
 
-  while ((move = NextMove(&mp, board, 0))) {
-    MakeMoveUpdate(move, board, 0);
-    uint64_t nodes = Perft(depth - 1, board);
-    UndoMove(move, board);
+    while((move = NextMove(&mp, board, 0))) {
+        MakeMoveUpdate(move, board, 0);
+        uint64_t nodes = Perft(depth - 1, board);
+        UndoMove(move, board);
 
-    printf("%5s: %" PRIu64 "\n", MoveToStr(move, board), nodes);
-    total += nodes;
-  }
+        printf("%5s: %" PRIu64 "\n", MoveToStr(move, board), nodes);
+        total += nodes;
+    }
 
-  long endTime = GetTimeMS();
+    long endTime = GetTimeMS();
 
-  printf("\nNodes: %" PRIu64 "\n", total);
-  printf("Time: %ldms\n", (endTime - startTime));
-  printf("NPS: %" PRIu64 "\n\n", total / Max(1, (endTime - startTime)) * 1000);
+    printf("\nNodes: %" PRIu64 "\n", total);
+    printf("Time: %ldms\n", (endTime - startTime));
+    printf("NPS: %" PRIu64 "\n\n", total / Max(1, (endTime - startTime)) * 1000);
 }

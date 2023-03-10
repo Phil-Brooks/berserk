@@ -17,9 +17,9 @@
 #ifndef EVAL_H
 #define EVAL_H
 
-#include <stdlib.h>
-
 #include "types.h"
+
+#include <stdlib.h>
 
 extern const int PHASE_VALUES[6];
 extern const int MAX_PHASE;

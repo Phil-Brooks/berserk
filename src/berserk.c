@@ -14,8 +14,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-#include <string.h>
-
 #include "attacks.h"
 #include "bench.h"
 #include "bits.h"
@@ -30,29 +28,32 @@
 #include "util.h"
 #include "zobrist.h"
 
+#include <string.h>
+
 // Welcome to berserk
-int main(int argc, char** argv) {
-  SeedRandom(0);
+int main(int argc, char** argv)
+{
+    SeedRandom(0);
 
-  InitZobristKeys();
-  InitPruningAndReductionTables();
-  InitAttacks();
-  InitCuckoo();
+    InitZobristKeys();
+    InitPruningAndReductionTables();
+    InitAttacks();
+    InitCuckoo();
 
-  LoadDefaultNN();
-  ThreadsInit();
-  TTInit(16);
+    LoadDefaultNN();
+    ThreadsInit();
+    TTInit(16);
 
-  // Compliance for OpenBench
-  if (argc > 1 && !strncmp(argv[1], "bench", 5)) {
-    int depth = DEFAULT_BENCH_DEPTH;
-    if (argc > 2)
-      depth = Max(1, atoi(argv[2]));
+    // Compliance for OpenBench
+    if(argc > 1 && !strncmp(argv[1], "bench", 5)) {
+        int depth = DEFAULT_BENCH_DEPTH;
+        if(argc > 2)
+            depth = Max(1, atoi(argv[2]));
 
-    Bench(depth);
-  } else {
-    UCILoop();
-  }
+        Bench(depth);
+    } else {
+        UCILoop();
+    }
 
-  return 0;
+    return 0;
 }

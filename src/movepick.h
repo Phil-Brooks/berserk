@@ -22,58 +22,53 @@
 #include "types.h"
 #include "util.h"
 
-enum {
-  ST_QUIET,
-  ST_CAPTURE,
-  ST_EVASION
-};
+enum { ST_QUIET, ST_CAPTURE, ST_EVASION };
 
-INLINE void InitNormalMovePicker(MovePicker* picker,
-                                 Move hashMove,
-                                 ThreadData* thread,
-                                 SearchStack* ss,
-                                 BitBoard threats) {
-  picker->phase = HASH_MOVE;
+INLINE void InitNormalMovePicker(MovePicker* picker, Move hashMove, ThreadData* thread, SearchStack* ss,
+                                 BitBoard threats)
+{
+    picker->phase = HASH_MOVE;
 
-  picker->hashMove = hashMove;
-  picker->killer1  = ss->killers[0];
-  picker->killer2  = ss->killers[1];
-  picker->counter  = thread->counters[Moving((ss - 1)->move)][To((ss - 1)->move)];
+    picker->hashMove = hashMove;
+    picker->killer1 = ss->killers[0];
+    picker->killer2 = ss->killers[1];
+    picker->counter = thread->counters[Moving((ss - 1)->move)][To((ss - 1)->move)];
 
-  picker->threats = threats;
-  picker->thread  = thread;
-  picker->ss      = ss;
+    picker->threats = threats;
+    picker->thread = thread;
+    picker->ss = ss;
 }
 
-INLINE void InitPCMovePicker(MovePicker* picker, ThreadData* thread) {
-  picker->phase  = PC_GEN_NOISY_MOVES;
-  picker->thread = thread;
+INLINE void InitPCMovePicker(MovePicker* picker, ThreadData* thread)
+{
+    picker->phase = PC_GEN_NOISY_MOVES;
+    picker->thread = thread;
 }
 
-INLINE void InitQSMovePicker(MovePicker* picker, ThreadData* thread) {
-  picker->phase  = QS_GEN_NOISY_MOVES;
-  picker->thread = thread;
+INLINE void InitQSMovePicker(MovePicker* picker, ThreadData* thread)
+{
+    picker->phase = QS_GEN_NOISY_MOVES;
+    picker->thread = thread;
 }
 
-INLINE void InitQSEvasionsPicker(MovePicker* picker,
-                                 Move hashMove,
-                                 ThreadData* thread,
-                                 SearchStack* ss,
-                                 BitBoard threats) {
-  picker->phase = QS_EVASION_HASH_MOVE;
+INLINE void InitQSEvasionsPicker(MovePicker* picker, Move hashMove, ThreadData* thread, SearchStack* ss,
+                                 BitBoard threats)
+{
+    picker->phase = QS_EVASION_HASH_MOVE;
 
-  picker->hashMove = hashMove;
+    picker->hashMove = hashMove;
 
-  picker->threats = threats;
-  picker->thread  = thread;
-  picker->ss      = ss;
+    picker->threats = threats;
+    picker->thread = thread;
+    picker->ss = ss;
 }
 
-INLINE void InitPerftMovePicker(MovePicker* picker, Board* board) {
-  picker->phase   = PERFT_MOVES;
-  picker->current = picker->moves;
+INLINE void InitPerftMovePicker(MovePicker* picker, Board* board)
+{
+    picker->phase = PERFT_MOVES;
+    picker->current = picker->moves;
 
-  picker->end = AddPerftMoves(picker->moves, board);
+    picker->end = AddPerftMoves(picker->moves, board);
 }
 
 Move NextMove(MovePicker* picker, Board* board, int skipQuiets);

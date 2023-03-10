@@ -17,28 +17,32 @@
 #include "movegen.h"
 
 const int CASTLE_MAP[4][3] = {
-  {WHITE_KS, G1, F1},
-  {WHITE_QS, C1, D1},
-  {BLACK_KS, G8, F8},
-  {BLACK_QS, C8, D8},
+    { WHITE_KS, G1, F1 },
+    { WHITE_QS, C1, D1 },
+    { BLACK_KS, G8, F8 },
+    { BLACK_QS, C8, D8 },
 };
 
-ScoredMove* AddNoisyMoves(ScoredMove* moves, Board* board) {
-  return board->stm == WHITE ? AddPseudoLegalMoves(moves, board, GT_CAPTURE, WHITE) : //
-                               AddPseudoLegalMoves(moves, board, GT_CAPTURE, BLACK);
+ScoredMove* AddNoisyMoves(ScoredMove* moves, Board* board)
+{
+    return board->stm == WHITE ? AddPseudoLegalMoves(moves, board, GT_CAPTURE, WHITE) : //
+               AddPseudoLegalMoves(moves, board, GT_CAPTURE, BLACK);
 }
 
-ScoredMove* AddQuietMoves(ScoredMove* moves, Board* board) {
-  return board->stm == WHITE ? AddPseudoLegalMoves(moves, board, GT_QUIET, WHITE) : //
-                               AddPseudoLegalMoves(moves, board, GT_QUIET, BLACK);
+ScoredMove* AddQuietMoves(ScoredMove* moves, Board* board)
+{
+    return board->stm == WHITE ? AddPseudoLegalMoves(moves, board, GT_QUIET, WHITE) : //
+               AddPseudoLegalMoves(moves, board, GT_QUIET, BLACK);
 }
 
-ScoredMove* AddEvasionMoves(ScoredMove* moves, Board* board) {
-  return board->stm == WHITE ? AddPseudoLegalMoves(moves, board, GT_LEGAL, WHITE) : //
-                               AddPseudoLegalMoves(moves, board, GT_LEGAL, BLACK);
+ScoredMove* AddEvasionMoves(ScoredMove* moves, Board* board)
+{
+    return board->stm == WHITE ? AddPseudoLegalMoves(moves, board, GT_LEGAL, WHITE) : //
+               AddPseudoLegalMoves(moves, board, GT_LEGAL, BLACK);
 }
 
-ScoredMove* AddPerftMoves(ScoredMove* moves, Board* board) {
-  return board->stm == WHITE ? AddLegalMoves(moves, board, WHITE) : //
-                               AddLegalMoves(moves, board, BLACK);
+ScoredMove* AddPerftMoves(ScoredMove* moves, Board* board)
+{
+    return board->stm == WHITE ? AddLegalMoves(moves, board, WHITE) : //
+               AddLegalMoves(moves, board, BLACK);
 }

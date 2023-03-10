@@ -24,29 +24,22 @@
 #include "util.h"
 
 #define HH(stm, m, threats) (thread->hh[stm][!GetBit(threats, From(m))][!GetBit(threats, To(m))][FromTo(m)])
-#define TH(p, e, c)         (thread->caph[p][e][c])
+#define TH(p, e, c) (thread->caph[p][e][c])
 
-INLINE int GetQuietHistory(SearchStack* ss, ThreadData* thread, Move move, int stm, BitBoard threats) {
-  return (int) HH(stm, move, threats) +                  //
-         (int) (*(ss - 1)->ch)[Moving(move)][To(move)] + //
-         (int) (*(ss - 2)->ch)[Moving(move)][To(move)] + //
-         (int) (*(ss - 4)->ch)[Moving(move)][To(move)];
+INLINE int GetQuietHistory(SearchStack* ss, ThreadData* thread, Move move, int stm, BitBoard threats)
+{
+    return (int)HH(stm, move, threats) +                  //
+           (int)(*(ss - 1)->ch)[Moving(move)][To(move)] + //
+           (int)(*(ss - 2)->ch)[Moving(move)][To(move)] + //
+           (int)(*(ss - 4)->ch)[Moving(move)][To(move)];
 }
 
-INLINE int GetCaptureHistory(ThreadData* thread, Board* board, Move move) {
-  return TH(Moving(move), To(move), IsEP(move) ? PAWN : PieceType(board->squares[To(move)]));
+INLINE int GetCaptureHistory(ThreadData* thread, Board* board, Move move)
+{
+    return TH(Moving(move), To(move), IsEP(move) ? PAWN : PieceType(board->squares[To(move)]));
 }
 
-void UpdateHistories(Board* board,
-                     SearchStack* ss,
-                     ThreadData* thread,
-                     Move bestMove,
-                     int depth,
-                     int stm,
-                     Move quiets[],
-                     int nQ,
-                     Move captures[],
-                     int nC,
-                     BitBoard threats);
+void UpdateHistories(Board* board, SearchStack* ss, ThreadData* thread, Move bestMove, int depth, int stm,
+                     Move quiets[], int nQ, Move captures[], int nC, BitBoard threats);
 
 #endif

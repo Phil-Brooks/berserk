@@ -17,9 +17,9 @@
 #ifndef UTIL_H
 #define UTIL_H
 
-#include <stdlib.h>
-
 #include "types.h"
+
+#include <stdlib.h>
 
 #define Min(a, b) (((a) < (b)) ? (a) : (b))
 #define Max(a, b) (((a) > (b)) ? (a) : (b))
@@ -30,15 +30,14 @@
 
 long GetTimeMS();
 
-INLINE void* AlignedMalloc(uint64_t size) {
-  void* mem  = malloc(size + ALIGN_ON + sizeof(void*));
-  void** ptr = (void**) ((uintptr_t) (mem + ALIGN_ON + sizeof(void*)) & ~(ALIGN_ON - 1));
-  ptr[-1]    = mem;
-  return ptr;
+INLINE void* AlignedMalloc(uint64_t size)
+{
+    void* mem = malloc(size + ALIGN_ON + sizeof(void*));
+    void** ptr = (void**)((uintptr_t)(mem + ALIGN_ON + sizeof(void*)) & ~(ALIGN_ON - 1));
+    ptr[-1] = mem;
+    return ptr;
 }
 
-INLINE void AlignedFree(void* ptr) {
-  free(((void**) ptr)[-1]);
-}
+INLINE void AlignedFree(void* ptr) { free(((void**)ptr)[-1]); }
 
 #endif
