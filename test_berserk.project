@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Project Name="test_berserk" Version="11000" InternalType="Console">
   <VirtualDirectory Name="tests">
+    <File Name="tests/checks_board.c"/>
+    <File Name="tests/check_bits.c"/>
+    <File Name="tests/test.h"/>
+    <File Name="tests/test_berserk.c"/>
     <File Name="tests/check_attacks.c"/>
   </VirtualDirectory>
   <Description/>
