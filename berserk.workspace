@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="berserk" Database="" Version="10000">
-  <Project Name="berserk" Path="berserk.project" Active="Yes"/>
+  <Project Name="berserk" Path="berserk.project" Active="No"/>
+  <Project Name="test_berserk" Path="test_berserk.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
       <Project Name="berserk" ConfigName="Debug"/>
+      <Project Name="test_berserk" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
       <Project Name="berserk" ConfigName="Release"/>
+      <Project Name="test_berserk" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ berserk - Debug ]----------"
-	@"$(MAKE)" -f  "berserk.mk"
+	@echo "----------Building project:[ test_berserk - Debug ]----------"
+	@"$(MAKE)" -f  "test_berserk.mk"
 clean:
-	@echo "----------Cleaning project:[ berserk - Debug ]----------"
-	@"$(MAKE)" -f  "berserk.mk" clean
+	@echo "----------Cleaning project:[ test_berserk - Debug ]----------"
+	@"$(MAKE)" -f  "test_berserk.mk" clean

@@ -3,7 +3,7 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=berserk
+ProjectName            :=test_berserk
 ConfigurationName      :=Debug
 WorkspaceConfiguration :=Debug
 WorkspacePath          :=D:/Github/berserk
@@ -14,7 +14,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=phil
-Date                   :=3/11/2023
+Date                   :=3/12/2023
 CodeLitePath           :="C:/Program Files/CodeLite"
 MakeDirCommand         :=mkdir
 LinkerName             :=C:/msys64/mingw64/bin/g++.exe
@@ -40,11 +40,11 @@ PCHCompileFlags        :=
 RcCmpOptions           := 
 RcCompilerName         :=C:/msys64/mingw64/bin/windres.exe
 LinkOptions            :=  
-IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). $(IncludeSwitch)D:\Github\berserk\src 
+IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). $(IncludeSwitch). $(IncludeSwitch)D:\Github\berserk\src 
 IncludePCH             := 
 RcIncludePath          := 
-Libs                   := 
-ArLibs                 :=  
+Libs                   := $(LibrarySwitch)check 
+ArLibs                 :=  "check" 
 LibPath                := $(LibraryPathSwitch). 
 
 ##
@@ -54,8 +54,8 @@ LibPath                := $(LibraryPathSwitch).
 AR       := C:/msys64/mingw64/bin/ar.exe -r
 CXX      := C:/msys64/mingw64/bin/g++.exe
 CC       := C:/msys64/mingw64/bin/gcc.exe
-CXXFLAGS :=  -gdwarf-2 -O0 -Wall $(Preprocessors)
-CFLAGS   :=  -O0 -gdwarf-2 -Wall $(Preprocessors)
+CXXFLAGS :=   -gdwarf-2 -O0 -Wall $(Preprocessors)
+CFLAGS   :=   -O0 -gdwarf-2 -Wall $(Preprocessors)
 ASFLAGS  := 
 AS       := C:/msys64/mingw64/bin/as.exe
 
@@ -64,9 +64,9 @@ AS       := C:/msys64/mingw64/bin/as.exe
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/src_uci.c$(ObjectSuffix) $(IntermediateDirectory)/src_movegen.c$(ObjectSuffix) $(IntermediateDirectory)/src_pyrrhic_tbprobe.c$(ObjectSuffix) $(IntermediateDirectory)/src_tb.c$(ObjectSuffix) $(IntermediateDirectory)/src_bits.c$(ObjectSuffix) $(IntermediateDirectory)/src_attacks.c$(ObjectSuffix) $(IntermediateDirectory)/src_board.c$(ObjectSuffix) $(IntermediateDirectory)/src_movepick.c$(ObjectSuffix) $(IntermediateDirectory)/src_endgame.c$(ObjectSuffix) $(IntermediateDirectory)/src_move.c$(ObjectSuffix) \
-	$(IntermediateDirectory)/src_eval.c$(ObjectSuffix) $(IntermediateDirectory)/src_transposition.c$(ObjectSuffix) $(IntermediateDirectory)/src_util.c$(ObjectSuffix) $(IntermediateDirectory)/src_perft.c$(ObjectSuffix) $(IntermediateDirectory)/src_history.c$(ObjectSuffix) $(IntermediateDirectory)/src_thread.c$(ObjectSuffix) $(IntermediateDirectory)/src_search.c$(ObjectSuffix) $(IntermediateDirectory)/src_berserk.c$(ObjectSuffix) $(IntermediateDirectory)/src_random.c$(ObjectSuffix) $(IntermediateDirectory)/src_see.c$(ObjectSuffix) \
-	$(IntermediateDirectory)/src_bench.c$(ObjectSuffix) $(IntermediateDirectory)/src_nn.c$(ObjectSuffix) $(IntermediateDirectory)/src_zobrist.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/src_tb.c$(ObjectSuffix) $(IntermediateDirectory)/src_bits.c$(ObjectSuffix) $(IntermediateDirectory)/src_attacks.c$(ObjectSuffix) $(IntermediateDirectory)/src_board.c$(ObjectSuffix) $(IntermediateDirectory)/src_movepick.c$(ObjectSuffix) $(IntermediateDirectory)/src_endgame.c$(ObjectSuffix) $(IntermediateDirectory)/src_move.c$(ObjectSuffix) $(IntermediateDirectory)/src_pyrrhic_tbprobe.c$(ObjectSuffix) $(IntermediateDirectory)/src_uci.c$(ObjectSuffix) $(IntermediateDirectory)/src_movegen.c$(ObjectSuffix) \
+	$(IntermediateDirectory)/src_bench.c$(ObjectSuffix) $(IntermediateDirectory)/tests_check_attacks.c$(ObjectSuffix) $(IntermediateDirectory)/src_nn.c$(ObjectSuffix) $(IntermediateDirectory)/src_eval.c$(ObjectSuffix) $(IntermediateDirectory)/src_transposition.c$(ObjectSuffix) $(IntermediateDirectory)/src_util.c$(ObjectSuffix) $(IntermediateDirectory)/src_perft.c$(ObjectSuffix) $(IntermediateDirectory)/src_history.c$(ObjectSuffix) $(IntermediateDirectory)/src_thread.c$(ObjectSuffix) $(IntermediateDirectory)/src_random.c$(ObjectSuffix) \
+	$(IntermediateDirectory)/src_see.c$(ObjectSuffix) $(IntermediateDirectory)/src_zobrist.c$(ObjectSuffix) $(IntermediateDirectory)/src_search.c$(ObjectSuffix) 
 
 
 
@@ -97,21 +97,6 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/src_uci.c$(ObjectSuffix): src/uci.c 
-	$(CC) $(SourceSwitch) "D:/Github/berserk/src/uci.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_uci.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/src_uci.c$(PreprocessSuffix): src/uci.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_uci.c$(PreprocessSuffix) src/uci.c
-
-$(IntermediateDirectory)/src_movegen.c$(ObjectSuffix): src/movegen.c 
-	$(CC) $(SourceSwitch) "D:/Github/berserk/src/movegen.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_movegen.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/src_movegen.c$(PreprocessSuffix): src/movegen.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_movegen.c$(PreprocessSuffix) src/movegen.c
-
-$(IntermediateDirectory)/src_pyrrhic_tbprobe.c$(ObjectSuffix): src/pyrrhic/tbprobe.c 
-	$(CC) $(SourceSwitch) "D:/Github/berserk/src/pyrrhic/tbprobe.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_pyrrhic_tbprobe.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/src_pyrrhic_tbprobe.c$(PreprocessSuffix): src/pyrrhic/tbprobe.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_pyrrhic_tbprobe.c$(PreprocessSuffix) src/pyrrhic/tbprobe.c
-
 $(IntermediateDirectory)/src_tb.c$(ObjectSuffix): src/tb.c 
 	$(CC) $(SourceSwitch) "D:/Github/berserk/src/tb.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_tb.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/src_tb.c$(PreprocessSuffix): src/tb.c
@@ -147,6 +132,36 @@ $(IntermediateDirectory)/src_move.c$(ObjectSuffix): src/move.c
 $(IntermediateDirectory)/src_move.c$(PreprocessSuffix): src/move.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_move.c$(PreprocessSuffix) src/move.c
 
+$(IntermediateDirectory)/src_pyrrhic_tbprobe.c$(ObjectSuffix): src/pyrrhic/tbprobe.c 
+	$(CC) $(SourceSwitch) "D:/Github/berserk/src/pyrrhic/tbprobe.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_pyrrhic_tbprobe.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_pyrrhic_tbprobe.c$(PreprocessSuffix): src/pyrrhic/tbprobe.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_pyrrhic_tbprobe.c$(PreprocessSuffix) src/pyrrhic/tbprobe.c
+
+$(IntermediateDirectory)/src_uci.c$(ObjectSuffix): src/uci.c 
+	$(CC) $(SourceSwitch) "D:/Github/berserk/src/uci.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_uci.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_uci.c$(PreprocessSuffix): src/uci.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_uci.c$(PreprocessSuffix) src/uci.c
+
+$(IntermediateDirectory)/src_movegen.c$(ObjectSuffix): src/movegen.c 
+	$(CC) $(SourceSwitch) "D:/Github/berserk/src/movegen.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_movegen.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_movegen.c$(PreprocessSuffix): src/movegen.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_movegen.c$(PreprocessSuffix) src/movegen.c
+
+$(IntermediateDirectory)/src_bench.c$(ObjectSuffix): src/bench.c 
+	$(CC) $(SourceSwitch) "D:/Github/berserk/src/bench.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_bench.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_bench.c$(PreprocessSuffix): src/bench.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_bench.c$(PreprocessSuffix) src/bench.c
+
+$(IntermediateDirectory)/tests_check_attacks.c$(ObjectSuffix): tests/check_attacks.c 
+	$(CC) $(SourceSwitch) "D:/Github/berserk/tests/check_attacks.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/tests_check_attacks.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/tests_check_attacks.c$(PreprocessSuffix): tests/check_attacks.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/tests_check_attacks.c$(PreprocessSuffix) tests/check_attacks.c
+
+$(IntermediateDirectory)/src_nn.c$(ObjectSuffix): src/nn.c 
+	$(CC) $(SourceSwitch) "D:/Github/berserk/src/nn.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_nn.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_nn.c$(PreprocessSuffix): src/nn.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_nn.c$(PreprocessSuffix) src/nn.c
+
 $(IntermediateDirectory)/src_eval.c$(ObjectSuffix): src/eval.c 
 	$(CC) $(SourceSwitch) "D:/Github/berserk/src/eval.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_eval.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/src_eval.c$(PreprocessSuffix): src/eval.c
@@ -177,16 +192,6 @@ $(IntermediateDirectory)/src_thread.c$(ObjectSuffix): src/thread.c
 $(IntermediateDirectory)/src_thread.c$(PreprocessSuffix): src/thread.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_thread.c$(PreprocessSuffix) src/thread.c
 
-$(IntermediateDirectory)/src_search.c$(ObjectSuffix): src/search.c 
-	$(CC) $(SourceSwitch) "D:/Github/berserk/src/search.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_search.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/src_search.c$(PreprocessSuffix): src/search.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_search.c$(PreprocessSuffix) src/search.c
-
-$(IntermediateDirectory)/src_berserk.c$(ObjectSuffix): src/berserk.c 
-	$(CC) $(SourceSwitch) "D:/Github/berserk/src/berserk.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_berserk.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/src_berserk.c$(PreprocessSuffix): src/berserk.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_berserk.c$(PreprocessSuffix) src/berserk.c
-
 $(IntermediateDirectory)/src_random.c$(ObjectSuffix): src/random.c 
 	$(CC) $(SourceSwitch) "D:/Github/berserk/src/random.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_random.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/src_random.c$(PreprocessSuffix): src/random.c
@@ -197,20 +202,15 @@ $(IntermediateDirectory)/src_see.c$(ObjectSuffix): src/see.c
 $(IntermediateDirectory)/src_see.c$(PreprocessSuffix): src/see.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_see.c$(PreprocessSuffix) src/see.c
 
-$(IntermediateDirectory)/src_bench.c$(ObjectSuffix): src/bench.c 
-	$(CC) $(SourceSwitch) "D:/Github/berserk/src/bench.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_bench.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/src_bench.c$(PreprocessSuffix): src/bench.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_bench.c$(PreprocessSuffix) src/bench.c
-
-$(IntermediateDirectory)/src_nn.c$(ObjectSuffix): src/nn.c 
-	$(CC) $(SourceSwitch) "D:/Github/berserk/src/nn.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_nn.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/src_nn.c$(PreprocessSuffix): src/nn.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_nn.c$(PreprocessSuffix) src/nn.c
-
 $(IntermediateDirectory)/src_zobrist.c$(ObjectSuffix): src/zobrist.c 
 	$(CC) $(SourceSwitch) "D:/Github/berserk/src/zobrist.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_zobrist.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/src_zobrist.c$(PreprocessSuffix): src/zobrist.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_zobrist.c$(PreprocessSuffix) src/zobrist.c
+
+$(IntermediateDirectory)/src_search.c$(ObjectSuffix): src/search.c 
+	$(CC) $(SourceSwitch) "D:/Github/berserk/src/search.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_search.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_search.c$(PreprocessSuffix): src/search.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_search.c$(PreprocessSuffix) src/search.c
 
 ##
 ## Clean
