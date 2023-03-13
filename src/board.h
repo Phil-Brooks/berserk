@@ -41,13 +41,9 @@ extern const uint16_t KING_BUCKETS[64];
 
 void ParseFen(char* fen, Board* board);
 void PrintBoard(Board* board);
-
-void SetSpecialPieces(Board* board);
+void BoardToFen(char* fen, Board* board);
 
 int IsDraw(Board* board, int ply);
-int IsRepetition(Board* board, int ply);
-int IsMaterialDraw(Board* board);
-int IsFiftyMoveRule(Board* board);
 
 int HasNonPawn(Board* board);
 

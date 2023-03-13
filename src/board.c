@@ -51,6 +51,32 @@ INLINE int MoveRequiresRefresh(int piece, int from, int to)
     return KING_BUCKETS[from] != KING_BUCKETS[to];
 }
 
+// Special pieces are those giving check, and those that are pinned
+// these must be recalculated every move for faster move legality purposes
+INLINE void SetSpecialPieces(Board* board)
+{
+    const int stm = board->stm;
+    const int xstm = board->xstm;
+
+    int kingSq = LSB(PieceBB(KING, stm));
+
+    board->pinned = 0;
+    board->checkers = (GetKnightAttacks(kingSq) & PieceBB(KNIGHT, xstm)) | // knight and
+                      (GetPawnAttacks(kingSq, stm) & PieceBB(PAWN, xstm)); // pawns are easy
+
+    BitBoard sliders = ((PieceBB(BISHOP, xstm) | PieceBB(QUEEN, xstm)) & GetBishopAttacks(kingSq, 0)) |
+                       ((PieceBB(ROOK, xstm) | PieceBB(QUEEN, xstm)) & GetRookAttacks(kingSq, 0));
+    while(sliders) {
+        int sq = PopLSB(&sliders);
+
+        BitBoard blockers = BetweenSquares(kingSq, sq) & OccBB(BOTH);
+        if(!blockers)
+            SetBit(board->checkers, sq);
+        else if(BitCount(blockers) == 1)
+            board->pinned |= (blockers & OccBB(stm));
+    }
+}
+
 // reset the board to an empty state
 void ClearBoard(Board* board)
 {
@@ -255,32 +281,6 @@ void PrintBoard(Board* board)
 inline int HasNonPawn(Board* board)
 {
     return BitCount(OccBB(board->stm) ^ PieceBB(KING, board->stm) ^ PieceBB(PAWN, board->stm));
-}
-
-// Special pieces are those giving check, and those that are pinned
-// these must be recalculated every move for faster move legality purposes
-inline void SetSpecialPieces(Board* board)
-{
-    const int stm = board->stm;
-    const int xstm = board->xstm;
-
-    int kingSq = LSB(PieceBB(KING, stm));
-
-    board->pinned = 0;
-    board->checkers = (GetKnightAttacks(kingSq) & PieceBB(KNIGHT, xstm)) | // knight and
-                      (GetPawnAttacks(kingSq, stm) & PieceBB(PAWN, xstm)); // pawns are easy
-
-    BitBoard sliders = ((PieceBB(BISHOP, xstm) | PieceBB(QUEEN, xstm)) & GetBishopAttacks(kingSq, 0)) |
-                       ((PieceBB(ROOK, xstm) | PieceBB(QUEEN, xstm)) & GetRookAttacks(kingSq, 0));
-    while(sliders) {
-        int sq = PopLSB(&sliders);
-
-        BitBoard blockers = BetweenSquares(kingSq, sq) & OccBB(BOTH);
-        if(!blockers)
-            SetBit(board->checkers, sq);
-        else if(BitCount(blockers) == 1)
-            board->pinned |= (blockers & OccBB(stm));
-    }
 }
 
 void MakeMove(Move move, Board* board) { MakeMoveUpdate(move, board, 1); }
@@ -521,12 +521,7 @@ void UndoNullMove(Board* board)
     board->pinned = board->history[board->histPly].pinned;
 }
 
-inline int IsDraw(Board* board, int ply)
-{
-    return IsRepetition(board, ply) || IsMaterialDraw(board) || IsFiftyMoveRule(board);
-}
-
-inline int IsRepetition(Board* board, int ply)
+INLINE int IsRepetition(Board* board, int ply)
 {
     int reps = 0, distance = Min(board->fmr, board->nullply);
 
@@ -545,7 +540,7 @@ inline int IsRepetition(Board* board, int ply)
     return 0;
 }
 
-inline int IsMaterialDraw(Board* board)
+INLINE int IsMaterialDraw(Board* board)
 {
     switch(board->piecesCounts) {
     case 0x0:      // Kk
@@ -565,7 +560,7 @@ inline int IsMaterialDraw(Board* board)
     }
 }
 
-inline int IsFiftyMoveRule(Board* board)
+INLINE int IsFiftyMoveRule(Board* board)
 {
     if(board->fmr > 99) {
         if(board->checkers) {
@@ -579,6 +574,11 @@ inline int IsFiftyMoveRule(Board* board)
     }
 
     return 0;
+}
+
+inline int IsDraw(Board* board, int ply)
+{
+    return IsRepetition(board, ply) || IsMaterialDraw(board) || IsFiftyMoveRule(board);
 }
 
 int IsPseudoLegal(Move move, Board* board)
